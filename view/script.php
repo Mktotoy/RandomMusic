@@ -10,13 +10,10 @@
 <script src="js/jquery.nav.js" type="text/javascript"></script>
 <script src="js/jquery.fittext.js"></script>
 <script src="js/waypoints.js"></script>
-<script src="js/custom.js" type="text/javascript"></script>
+
 <script src="js/owl-carousel/owl.carousel.js"></script>
 
 <!--SoundManager JS -->
-<script src="soundmanager/script/soundmanager2.js"></script>
+<script src="js/soundmanager2.js"></script>
 <script src="js/bar-ui.js"></script>
 <script src="js/music.js"></script>
-<script>
-
-</script>

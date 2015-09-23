@@ -8,23 +8,22 @@
       <div id="main-nav" class="collapse navbar-collapse">
         <ul class="nav navbar-nav" id="mainNav">
           <li>
-                                  <a class="page-scroll" href="#electro">Electro</a>
+                                  <a class="page-scroll typof" href="#electro">Electro</a>
                               </li>
                               <li>
-                                  <a class="page-scroll" href="#rock">PopRock</a>
+                                  <a class="page-scroll typof" href="#rock">PopRock</a>
                               </li>
                               <li>
-                                  <a class="page-scroll" href="#classic">Classical</a>
+                                  <a class="page-scroll typof" href="#classic">Classical</a>
                               </li>
                               <li>
-                                  <a class="page-scroll" href="#reggea">Reggae</a>
+                                  <a class="page-scroll typof" href="#reggea">Reggae</a>
                               </li>
                               <li>
-                                  <a class="page-scroll" href="#jazz">Jazz</a>
+                                  <a class="page-scroll typof" href="#jazz">Jazz</a>
                               </li>
-
-          			<li>
-                                  <a class="page-scroll" href="#movie">Movies</a>
+          			            <li>
+                                  <a class="page-scroll typof" href="#movie">Movies</a>
                               </li>
 
         </ul>

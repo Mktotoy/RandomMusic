@@ -43,16 +43,21 @@
         <a href="#volume" class="sm2-inline-button sm2-volume-control">volume</a>
        </div>
       </div>
-     <div class="sm2-inline-element sm2-button-element">
+     <div class="sm2-inline-element sm2-button-element prv">
         <div class="sm2-button-bd">
          <a href="#prev" title="Previous" class="sm2-inline-button previous">&lt; previous</a>
         </div>
      </div>
-     <div class="sm2-inline-element sm2-button-element">
+     <div class="sm2-inline-element sm2-button-element nxt">
         <div class="sm2-button-bd">
          <a href="#next" title="Next" class="sm2-inline-button next">&gt; next</a>
         </div>
        </div>
+       <div class="sm2-inline-element sm2-button-element sm2-menu">
+          <div class="sm2-button-bd">
+            <a href="#menu" class="sm2-inline-button menu">menu</a>
+          </div>
+         </div>
 
 
      </div>

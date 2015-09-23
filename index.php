@@ -13,9 +13,9 @@
   <div class="banner-container">
     <div class="container banner-content">
       <div class="hero-text animated fadeInDownBig">
-        <h1 class="responsive-headline debug" style="font-size: 40px;">Show Love In MUSIC<br/>
-          The template  for your passion</h1>
-         <a href="#basics" class="arrow-link"> <i class="fa fa-chevron-down"></i> </a>
+        <h1 class="responsive-headline musictitle" style="font-size: 40px;">Electro Random Music
+
+
       </div>
     </div>
   </div>

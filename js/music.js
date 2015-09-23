@@ -2,60 +2,80 @@ function setbackground()
 {
     window.setTimeout( "setbackground()", 2000000); // 5000 milliseconds delay
 
-    var index = Math.round(Math.random() * 9);
+    var colors = [
+        "#1abc9c", //peach
+        "#1abc9c", //violet
+        "#2980b9", //lt blue
+        "#34495e", //cyan
+        "#e67e22", //tan
+        "#c0392b", //lt green
+        "#9b59b6", //lt yellow
+        "#f1c40f", //lt orange
+        "#95a5a6", //lt grey
+        "#D91E18", //Thunderbird
+        "#663399", //REBECCAPURPLE
+        "#446CB3", //SAN MARINO
+        "#52B3D9", //SHAKESPEARE
+        "#C5EFF7", //HUMMING BIRD
+        "#03A678", //FREE SPEECH AQUAMARINE
+        "#F4B350" //CASABLANCA
+    ];
 
-    var ColorValue = "FFFFFF"; // default color - white (index = 0)
-
-    if(index == 1)
-        return ColorValue = "#1abc9c"; //peach
-    if(index == 2)
-        return ColorValue = "#1abc9c"; //violet
-    if(index == 3)
-        return ColorValue = "#2980b9"; //lt blue
-    if(index == 4)
-        return ColorValue = "#34495e"; //cyan
-    if(index == 5)
-        return ColorValue = "#e67e22"; //tan
-    if(index == 6)
-        return ColorValue = "#c0392b"; //lt green
-    if(index == 7)
-        return ColorValue = "#9b59b6"; //lt yellow
-    if(index == 8)
-        return ColorValue = "#f1c40f"; //lt orange
-    if(index == 9)
-        return ColorValue = "#95a5a6"; //lt grey
-
-
-
-
+        return colors[Math.floor(Math.random() * colors.length)];
 
 }
 $(function () {
     var $srctype;
-    $srctype="movie/";
-   request(newsong);
-    soundManager.onready(function(){
-        soundManager.play();
+    $srctype="electro/";
+
+    var flag =false;
+
+
+    request(newsong);
+    request(newsong);
+
+    soundManager.setup({
+        onready: function() {
+
+            window.sm2BarPlayers[0].actions.play("sound0");
+        }
     });
 
-    $("#prev").click(request(newsong));
-    $("#next").click(request(newsong));
 
-    document.getElementsByTagName("body")[0].style.backgroundColor = setbackground();
+    $(".nxt").click(function() {
+        request(newsong);
 
-    $(".sm2-main-controls").css("background-color",setbackground());
-    $(".sm2-playlist-drawer").css("background-color", $(".sm2-main-controls").css("background-color"));
+    });
+    $(".typof").click(function(){
+        var tmp2 = $(this).attr("href").substring(1);
+        $(".musictitle").html(tmp2.substring(0,1).toUpperCase()+tmp2.substring(1)+" Random Music")
+        $srctype=$(this).attr("href");
+        $srctype=$srctype.substring(1)+"/";
+        $(".oio").find("li").last().remove();
+        request(newsong);
+
+    });
+
+
+
 
     function newsong(sData) {
-        $(".debug").html(sData.replace(/ /g,'%20'));
-                var newhtml;
 
-            newhtml=' <li><a href="music/'+$srctype+'mp3/'+sData.replace(/ /g,'%20')+'.mp3">'+sData+'</a></li>';
+        var MusicUrl;
+        MusicUrl = 'music/'+$srctype+'mp3/'+sData.replace(/ /g,'%20')+'.mp3';
+        var newhtml = $(".oio").html();
+        if(newhtml.search(MusicUrl)>-1){
+            request(newsong);
+        }
+        else {
+            newhtml += ' <li><a href="' + MusicUrl + '">' + sData + '</a></li>';
+            $(".oio").html(newhtml);
+            //$(".download").attr('href','music/'+$srctype+'mp3/'+sData+'.mp3');
+            document.getElementsByTagName("body")[0].style.backgroundColor = setbackground();
+            $(".sm2-main-controls").css("background-color", setbackground());
+            $(".sm2-playlist-drawer").css("background-color", $(".sm2-main-controls").css("background-color"));
 
-
-        $(".oio").html(newhtml);
-        //$(".download").attr('href','music/'+$srctype+'mp3/'+sData+'.mp3');
-        setbackground();
+        }
     }
     function getXMLHttpRequest() {
         var xhr = null;
@@ -85,13 +105,11 @@ $(function () {
                 callback(xhr.responseText);
             }
         };
-
-
-
         xhr.open("POST", "control/setmusi.php", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.send("variable1="+$srctype+"");
     }
+
 
 
 
