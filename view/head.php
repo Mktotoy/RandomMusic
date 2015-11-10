@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <![endif]-->
 
-<title>Delite Music HTML5 Bootstrap Responsive web template-WebThemez</title>
+<title>Random Music</title>
 
 
 <meta name="description" content="">
@@ -22,12 +22,12 @@
 
 <link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />
-<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+
 <link href="css/animate.css" rel="stylesheet" media="screen">
 <!--SoundManager -->
 <link href="css/bar-ui.css" rel="stylesheet">
 <!-- Owl Carousel Assets -->
-<link href="js/owl-carousel/owl.carousel.css" rel="stylesheet">
+
 <link rel="stylesheet" href="css/styles.css" />
 
 <!-- Font Awesome -->

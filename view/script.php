@@ -15,5 +15,18 @@
 
 <!--SoundManager JS -->
 <script src="js/soundmanager2.js"></script>
-<script src="js/bar-ui.js"></script>
+<script>
+soundManager.setup({
+  url: 'swf/',
+  flashVersion: 9, // optional: shiny features (default = 8)
+  // optional: ignore Flash where possible, use 100% HTML5 mode
+  // preferFlash: false,
+  onready: function() {
+    // Ready to use; soundManager.createSound() etc. can now be called.
+  }
+});
+</script>
+<script src="js/myfunctions.js"></script>
 <script src="js/music.js"></script>
+<script src="js/bar-ui.js"></script>
+

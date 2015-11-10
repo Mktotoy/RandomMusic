@@ -290,6 +290,9 @@
 
           var lastIndex, item;
 
+          if (playlistController.data.selectedIndex >= playlistController.data.playlist.length-1)
+            request(newsong);
+
           utils.css.remove(dom.o, 'playing');
 
           dom.progress.style.left = '0%';
@@ -300,6 +303,8 @@
 
           // next track?
           item = playlistController.getNext();
+
+
 
           // don't play the same item over and over again, if at end of playlist etc.
           if (item && playlistController.data.selectedIndex !== lastIndex) {
@@ -1023,7 +1028,8 @@
       next: function(/* e */) {
 
         var item, lastIndex;
-
+        if (playlistController.data.selectedIndex >= playlistController.data.playlist.length-1)
+          request(newsong);
         // special case: clear "play next" timeout, if one exists.
         if (playlistController.data.timer) {
           window.clearTimeout(playlistController.data.timer);
@@ -1033,6 +1039,7 @@
         lastIndex = playlistController.data.selectedIndex;
 
         item = playlistController.getNext(true);
+
 
         // don't play the same item again
         if (item && playlistController.data.selectedIndex !== lastIndex) {
