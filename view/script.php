@@ -26,7 +26,7 @@ soundManager.setup({
   }
 });
 </script>
-<script src="js/myfunctions.js"></script>
-<script src="js/music.js"></script>
+<script type="module" src="js/myfunctions.js"></script>
+<script type="module" src="js/music.js"></script>
 <script src="js/bar-ui.js"></script>
 
