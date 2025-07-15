@@ -1,29 +1,23 @@
 # Random Music
 
-Ce dépôt contient un petit site web permettant d'écouter de la musique gratuitement de façon aléatoire. Le projet utilise PHP pour servir les titres et s'appuie principalement sur le framework Bootstrap pour l'interface utilisateur.
+Ce dépôt contient un petit site web permettant d'écouter de la musique gratuitement de façon aléatoire. La version actuelle ne dépend plus de PHP et fonctionne entièrement côté client en HTML, CSS et JavaScript. L'interface adopte désormais un design *glassmorphism*.
 
 ## Fonctionnement
 
-- `index.php` et `main.php` sont les points d'entrée principaux. Ils assemblent les différentes vues situées dans le dossier `view/` et chargent le lecteur audio ainsi que la barre de navigation.
+- `index.html` est désormais l'unique point d'entrée et embarque directement le lecteur SoundManager2.
 - Les fichiers musicaux sont rangés par genre dans le répertoire `music/`. Chaque genre possède un sous-dossier `mp3/` contenant des pistes au format MP3.
-- Le script `control/setmusi.php` renvoie aléatoirement le nom d'un morceau à partir d'un genre donné. Le JavaScript `js/myfunctions.js` appelle ce script afin de mettre à jour la playlist du lecteur.
+- La playlist est générée côté client à partir du fichier `js/playlist.js` qui référence l'ensemble des morceaux disponibles.
 - Les fichiers CSS et JavaScript nécessaires au thème se trouvent respectivement dans `css/` et `js/`.
 
 ## Lancer le site en local
 
-1. Installez PHP (version 5.4 ou supérieure suffit pour utiliser le serveur intégré).
-2. Placez-vous à la racine du projet et lancez :
-   ```bash
-   php -S localhost:8000
-   ```
-3. Ouvrez ensuite votre navigateur sur `http://localhost:8000/index.php` ou `main.php`.
+1. Ouvrez simplement `index.html` dans votre navigateur préféré ou servez le répertoire avec n'importe quel serveur HTTP statique.
 
 Le site charge alors une playlist aléatoire et permet d'écouter les titres via le lecteur intégré basé sur SoundManager 2.
 
 ## Structure des dossiers
 
 ```
-control/       Scripts PHP utilisés par l'application
 css/           Feuilles de style
 font/          Icônes FontAwesome
 fonts/         Polices diverses
@@ -31,7 +25,6 @@ image/         Images du thème
 images/        Autres visuels
 js/            Scripts JavaScript
 music/         Pistes classées par genre (electro, rock, jazz, ...)
-view/          Fragments HTML inclus dans les pages
 ```
 
 ## Crédits
