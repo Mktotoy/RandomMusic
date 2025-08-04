@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Music</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bar-ui.css">
+<link rel="stylesheet" href="css/glass.css">
+<link rel="stylesheet" href="font/css/font-awesome.min.css">
+</head>
+<body>
+<nav class="glass">
+  <h1>Random Music</h1>
+</nav>
+<div class="container text-center mt-5">
+  <h2>Enjoy random tracks</h2>
+  <p>Pure HTML/CSS/JS implementation using SoundManager2</p>
+</div>
+<div class="player-container">
+  <div class="glass">
+    <div class="sm2-bar-ui full-width">
+      <div class="bd sm2-main-controls">
+        <div class="sm2-inline-texture"></div>
+        <div class="sm2-inline-gradient"></div>
+        <div class="sm2-inline-element sm2-button-element">
+          <div class="sm2-button-bd">
+            <a href="#play" class="sm2-inline-button play-pause">Play / pause</a>
+          </div>
+        </div>
+        <div class="sm2-inline-element sm2-inline-status">
+          <div class="sm2-playlist">
+            <div class="sm2-playlist-target">
+              <noscript><p>Enable JavaScript.</p></noscript>
+            </div>
+          </div>
+          <div class="sm2-progress">
+            <div class="sm2-row">
+              <div class="sm2-inline-time">0:00</div>
+              <div class="sm2-progress-bd">
+                <div class="sm2-progress-track">
+                  <div class="sm2-progress-bar"></div>
+                  <div class="sm2-progress-ball"><div class="icon-overlay"></div></div>
+                </div>
+              </div>
+              <div class="sm2-inline-duration">0:00</div>
+            </div>
+          </div>
+        </div>
+        <div class="sm2-inline-element sm2-button-element sm2-volume">
+          <div class="sm2-button-bd">
+            <span class="sm2-inline-button sm2-volume-control volume-shade"></span>
+            <a href="#volume" class="sm2-inline-button sm2-volume-control">volume</a>
+          </div>
+        </div>
+        <div class="sm2-inline-element sm2-button-element">
+          <div class="sm2-button-bd">
+            <a href="#prev" class="sm2-inline-button previous">&lt; previous</a>
+          </div>
+        </div>
+        <div class="sm2-inline-element sm2-button-element">
+          <div class="sm2-button-bd">
+            <a href="#next" class="sm2-inline-button next">&gt; next</a>
+          </div>
+        </div>
+        <div class="sm2-inline-element sm2-button-element sm2-menu">
+          <div class="sm2-button-bd">
+            <a href="#menu" class="sm2-inline-button menu">menu</a>
+          </div>
+        </div>
+      </div>
+      <div class="bd sm2-playlist-drawer sm2-element">
+        <div class="sm2-inline-texture"><div class="sm2-box-shadow"></div></div>
+        <div class="sm2-playlist-wrapper">
+          <ul class="sm2-playlist-bd"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/soundmanager2.js"></script>
+<script src="js/bar-ui.js"></script>
+<script src="js/playlist.js"></script>
+<script src="js/player.js"></script>
+</body>
+</html>
