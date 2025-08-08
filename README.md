@@ -8,6 +8,7 @@ Ce dépôt contient un petit site web permettant d'écouter de la musique gratui
 - Les fichiers musicaux sont rangés par genre dans le répertoire `music/`. Chaque genre possède un sous-dossier `mp3/` contenant des pistes au format MP3.
 - La playlist est générée côté client à partir du fichier `js/playlist.js` qui référence l'ensemble des morceaux disponibles.
 - Les fichiers CSS et JavaScript nécessaires au thème se trouvent respectivement dans `css/` et `js/`.
+- Un appel à l'API [Jamendo](https://api.jamendo.com/) permet de compléter dynamiquement la liste avec des titres libres de droits.
 
 ## Lancer le site en local
 
