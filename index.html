@@ -8,11 +8,33 @@
 <link rel="stylesheet" href="css/bar-ui.css">
 <link rel="stylesheet" href="css/glass.css">
 <link rel="stylesheet" href="font/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/lofi.css">
 </head>
 <body>
-<h1>Random Music</h1>
-<div class="player-container">
+<div class="app">
+  <header class="app-header glass">
+    <button class="burger" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="brand">Random Music</div>
+  </header>
+
+  <aside id="sidebar" class="sidebar glass" aria-hidden="true">
+    <div class="sidebar-header">
+      <div class="title">Browse</div>
+    </div>
+    <div class="sidebar-content">
+      <input id="song-search" class="search" type="search" placeholder="Search songs..." />
+      <ul class="genre-list"></ul>
+      <div class="divider"></div>
+      <ul class="song-list"></ul>
+    </div>
+  </aside>
+
+  <div class="overlay" hidden></div>
+
+  <div class="player-container">
   <div class="glass">
     <div class="sm2-bar-ui full-width">
       <div class="bd sm2-main-controls">
@@ -42,7 +64,7 @@
             </div>
           </div>
         </div>
-        <div class="sm2-inline-element sm2-button-element sm2-volume">
+          <div class="sm2-inline-element sm2-button-element sm2-volume">
           <div class="sm2-button-bd">
             <span class="sm2-inline-button sm2-volume-control volume-shade"></span>
             <a href="#volume" class="sm2-inline-button sm2-volume-control">volume</a>
@@ -58,19 +80,16 @@
             <a href="#next" class="sm2-inline-button next">&gt; next</a>
           </div>
         </div>
-        <div class="sm2-inline-element sm2-button-element sm2-menu">
-          <div class="sm2-button-bd">
-            <a href="#menu" class="sm2-inline-button menu">menu</a>
-          </div>
-        </div>
+          <!-- Hide built-in menu; custom sidebar is used instead. -->
       </div>
-      <div class="bd sm2-playlist-drawer sm2-element">
+      <div class="bd sm2-playlist-drawer sm2-element custom-hidden">
         <div class="sm2-inline-texture"><div class="sm2-box-shadow"></div></div>
         <div class="sm2-playlist-wrapper">
           <ul class="sm2-playlist-bd"></ul>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
 <script src="js/jquery-1.8.2.min.js"></script>

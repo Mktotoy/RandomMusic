@@ -1,5 +1,41 @@
 body,html{height:100%;margin:0;font-family:'Open Sans',sans-serif;background:linear-gradient(135deg,#1d4350,#a43931) fixed;background-size:cover;color:#fff;}
-.glass{background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:15px;border:1px solid rgba(255,255,255,0.3);box-shadow:0 4px 30px rgba(0,0,0,0.1);}
-nav.glass{padding:1rem 2rem;margin:1rem;}
-.player-container{position:fixed;bottom:0;left:0;right:0;margin:0 1rem 1rem;}
-.player-container .glass{padding:1rem;}
+.glass{background:rgba(255,255,255,0.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:16px;border:1px solid rgba(255,255,255,0.28);box-shadow:0 10px 30px rgba(0,0,0,0.2);}
+
+/* App layout */
+.app{min-height:100vh;display:flex;flex-direction:column;}
+.app-header{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;margin:.75rem 1rem .5rem;}
+.app-header .brand{font-weight:600;letter-spacing:.3px}
+.burger{appearance:none;-webkit-appearance:none;border:0;background:transparent;padding:.25rem;display:inline-flex;flex-direction:column;gap:4px;cursor:pointer;border-radius:10px}
+.burger:focus{outline:2px solid rgba(255,255,255,.4);outline-offset:2px}
+.burger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.9);border-radius:2px}
+
+/* Sidebar */
+.sidebar{position:fixed;top:0;left:0;bottom:0;width:300px;max-width:85vw;transform:translateX(-105%);transition:transform .25s ease,opacity .25s ease;padding:1rem;margin:.75rem;overflow:hidden;display:flex;flex-direction:column;z-index:11}
+.sidebar.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
+.sidebar .title{font-weight:600;opacity:.95}
+.sidebar .search{width:100%;padding:.5rem .75rem;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;margin:.25rem 0 .75rem}
+.sidebar .search::placeholder{color:rgba(255,255,255,.8)}
+.sidebar .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);margin:.5rem 0}
+.sidebar-content{overflow:auto;padding-right:.25rem}
+.genre-list,.song-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.25rem}
+.genre-list li,.song-list li{margin:0}
+.genre-btn,.song-btn{width:100%;text-align:left;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.2);padding:.5rem .75rem;border-radius:12px;transition:background .2s ease,border-color .2s ease}
+.genre-btn:hover,.song-btn:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35)}
+.genre-btn.active{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.5)}
+
+/* Overlay for sidebar */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);z-index:10}
+
+/* Player Bar */
+.player-container{position:fixed;bottom:0;left:0;right:0;margin:0 1rem 1rem;z-index:5}
+.player-container .glass{padding:1rem}
+.custom-hidden{display:none !important}
+
+/* Tweak SoundManager UI to feel glassy */
+.sm2-bar-ui .bd{background:transparent}
+.sm2-bar-ui .sm2-inline-texture,.sm2-bar-ui .sm2-inline-gradient{display:none}
+
+@media (min-width: 992px){
+  .sidebar{width:340px}
+}
